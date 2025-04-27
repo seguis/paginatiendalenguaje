@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Información</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: AntiqueWhite;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            font-family: Arial, sans-serif;
+            font-size: 25px;
+            color: brown;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 18px;
+            font-family: Arial, sans-serif;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"], input[type="password"], input[type="submit"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="checkbox"], input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .checkbox-label, .radio-label {
+            font-size: 16px;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            background-color: brown;
+            color: white;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: darkbrown;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Formulario de Información</h1>
+
+    <form action="formulario.php" method="POST">
+        <label for="nombreyapellidos">Nombre y Apellidos:</label>
+        <input type="text" id="nombreyapellidos" name="nombreyapellidos" maxlength="50" required>
+
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" value="anónimo" disabled>
+
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña" maxlength="8" required>
+
+        <label for="nivel">Nivel:</label>
+        <input type="radio" id="principiante" name="nivel" value="Principiante">
+        <label for="principiante" class="radio-label">Profesional</label>
+
+        <input type="radio" id="intermedio" name="nivel" value="Intermedio" checked>
+        <label for="intermedio" class="radio-label">Avanzado</label>
+
+        <input type="radio" id="avanzado" name="nivel" value="Avanzado">
+        <label for="avanzado" class="radio-label">Principiante</label>
+
+        <label for="deseo">Deseo recibir más información:</label>
+        <input type="checkbox" id="deseo" name="deseo" checked>
+        <label for="deseo" class="checkbox-label">Sí, deseo recibir más información.</label>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" placeholder="Escribe aquí una breve descripción..."></textarea>
+
+        <label for="nacionalidad">Nacionalidad:</label>
+        <select id="nacionalidad" name="nacionalidad">
+            <option value="España">España</option>
+            <option value="Francia">Francia</option>
+            <option value="Alemania">Alemania</option>
+            <option value="Reino Unido">Reino Unido</option>
+        </select>
+
+        <label for="foto">Selecciona una foto:</label>
+        <input type="file" id="foto" name="foto" accept="image/*">
+
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Borrar">
+    </form>
+
+</body>
+</html>
